@@ -13,7 +13,7 @@ const blogSchema = new mongoose.Schema(
       required: true,
     },
 
-    // 📂 CATEGORY
+
     category: {
       type: String,
       enum: ["Travel", "Family", "Friends", "Health", "Life", "General"],
@@ -33,7 +33,7 @@ const blogSchema = new mongoose.Schema(
       required: true,
     },
 
-    // ❤️ LIKES
+
     likes: [
       {
         type: mongoose.Schema.Types.ObjectId,
@@ -41,7 +41,7 @@ const blogSchema = new mongoose.Schema(
       },
     ],
 
-    // 💬 COMMENTS
+
     comments: [
       {
         text: {
@@ -59,7 +59,6 @@ const blogSchema = new mongoose.Schema(
       },
     ],
 
-    // 👀 VIEWS (for trending)
     views: {
       type: Number,
       default: 0,

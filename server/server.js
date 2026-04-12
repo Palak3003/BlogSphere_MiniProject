@@ -5,7 +5,6 @@ const connectDB = require("./config/db");
 
 dotenv.config();
 
-// 👇 THIS MUST BE HERE
 connectDB();
 
 const app = express();
@@ -20,7 +19,7 @@ app.get("/", (req, res) => {
   res.send("API Running...");
 });
 
-const PORT = 5000;
+const PORT = 8000;
 const authMiddleware = require("./middleware/authMiddleware");
 
 app.get("/api/protected", authMiddleware, (req, res) => {
