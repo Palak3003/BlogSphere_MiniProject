@@ -1,17 +1,16 @@
 const Blog = require("../models/Blog");
 
 
-// 📝 CREATE BLOG
 exports.createBlog = async (req, res) => {
   try {
-    console.log("BACKEND RECEIVED:", req.body); // 🔥 check
+    console.log("BACKEND RECEIVED:", req.body); 
 
     const { title, content, category } = req.body;
 
     const blog = await Blog.create({
       title: title,
       content: content,
-      category: category, // ✅ THIS WAS MISSING / WRONG
+      category: category,
       author: req.user.id,
     });
 
@@ -21,7 +20,6 @@ exports.createBlog = async (req, res) => {
   }
 };
 
-// 📖 GET ALL BLOGS
 exports.getBlogs = async (req, res) => {
   try {
     const blogs = await Blog.find()
@@ -35,7 +33,6 @@ exports.getBlogs = async (req, res) => {
 };
 
 
-// 👤 GET MY BLOGS (PROFILE)
 exports.getMyBlogs = async (req, res) => {
   try {
     const blogs = await Blog.find({ author: req.user.id })
@@ -49,7 +46,6 @@ exports.getMyBlogs = async (req, res) => {
 };
 
 
-// ❤️ LIKE / UNLIKE
 exports.likeBlog = async (req, res) => {
   try {
     const blog = await Blog.findById(req.params.id);
@@ -80,7 +76,6 @@ exports.likeBlog = async (req, res) => {
 };
 
 
-// 💬 ADD COMMENT
 exports.addComment = async (req, res) => {
   try {
     const blog = await Blog.findById(req.params.id);
