@@ -7,7 +7,7 @@ function Profile() {
   const fetchMyBlogs = async () => {
     const token = localStorage.getItem("token");
 
-    const res = await fetch("http://localhost:8000/api/blogs/myblogs", {
+    const res = await fetch("http://localhost:5000/api/blogs/myblogs", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -30,7 +30,7 @@ function Profile() {
 
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch(`http://localhost:8000/api/blogs/${blogId}`, {
+      const res = await fetch(`http://localhost:5000/api/blogs/${blogId}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,
