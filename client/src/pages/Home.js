@@ -103,7 +103,7 @@ function Home() {
 
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch(`https://blogsphere-miniproject.onrender.com/api/blogs/${blog._id}`, {
+      const res = await fetch(`https://blogsphere-miniproject.onrender.com/api/blogs/${blogId}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -229,7 +229,7 @@ function Home() {
                     <button
                       onClick={async () => {
                         try {
-                           console.log("FULL BLOG:", blog);   // 👈 yahan
+                           console.log("FULL BLOG:", blog); 
                           console.log("BLOG ID:", blog._id);
 
                           triggerLikeAnimation(blog._id);
