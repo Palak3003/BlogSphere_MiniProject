@@ -30,7 +30,7 @@ function Profile() {
 
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch(`https://blogsphere-miniproject.onrender.com/api/blogs/${blog._id}`, {
+      const res = await fetch(`https://blogsphere-miniproject.onrender.com/api/blogs/${blogId}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,
